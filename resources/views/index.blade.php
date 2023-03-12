@@ -25,6 +25,14 @@
                         <div class="input-group">
                             <select name="data_filter" class="form-select">
                                 <option value="">All Dates</option>
+                                <option value="today">Today</option>
+                                <option value="yesterday">Yesterday</option>
+                                <option value="this_week">This week</option>
+                                <option value="last_Week">Last Week</option>
+                                <option value="this_Month">This Month</option>
+                                <option value="last_Month">Last Month</option>
+                                <option value="this_Year">This Year</option>
+                                <option value="last_Year">Last Year</option>
                             </select>
                             <button type="button" class="btn btn-primary">Filter</button>
                         </div>

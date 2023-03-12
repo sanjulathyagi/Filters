@@ -4,15 +4,34 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $employees = Employee::all();
+        $query = Employee::query();
+        $date = $request->date_filter;
+
+        switch($date){
+            case 'today':
+                $query->whereDate('created_at', Carbon::today());
+                break;
+            case 'yesterday':
+                $query->whereDate('created_at', Carbon::yesterday());
+                break;
+            case 'this_week':
+                $query->whereBetween('created_at',[ Carbon::now()->startOfWeek(),Carbon::now()->endOfWeek() ]);
+                break;
+            case 'last_week':
+                $query->whereDate('created_at', Carbon::last_week());
+                break;
+
+
+        }
         return response()->view('index',compact('employees'));
     }
 
