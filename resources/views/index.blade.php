@@ -49,12 +49,12 @@
 
                     @foreach ($employees as $employee)
                     <tr>
-                        <td>{{ $employes->id }}</td>
-                        <td>{{ $employes->name }}</td>
-                        <td>{{ $employes->last_name }}</td>
-                        <td>{{ $employes->gender }}</td>
-                        <td>{{ $employes->email }}</td>
-                        <td>{{ $employes->created_at ->format('Y-m-d H:i:s') }}</td>
+                        <td>{{ $employee->id }}</td>
+                        <td>{{ $employee->name }}</td>
+                        <td>{{ $employee->last_name }}</td>
+                        <td>{{ $employee->gender }}</td>
+                        <td>{{ $employee->email }}</td>
+                        <td>{{ $employee->created_at ->format('Y-m-d H:i:s') }}</td>
 
 
                     </tr>
